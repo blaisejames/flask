@@ -45,6 +45,7 @@ input[type=submit] {
 }
 ul {
     list-style-type: none;
+    overflow-wrap: break-word;
 }
 p {
     font-size: 1em;
@@ -56,7 +57,15 @@ h3 {
     color: teal;
     margin-bottom: 20px;
 }
-.tab {
-    margin-left: 4em;
+.tab1 {
+    margin-left: 6.7em;
 }
-
+.tab2 {
+    margin-left: 3.2em;
+}
+.tab3 {
+    margin-left: 1em;
+}
+.tab4 {
+    margin-left: 5em;
+}
