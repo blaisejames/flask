@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Index</title>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <h1>Counter</h1>
+    <h3>{{ count }} time(s)</h3>
+    <form action = '/add2' method = 'GET'>
+        <button type="submit">+2</button>
+    </form>
+    <form action = '/clear' method = 'GET'>
+        <button type="submit">Clear</button>
+    </form>
+</body>
+</html>
