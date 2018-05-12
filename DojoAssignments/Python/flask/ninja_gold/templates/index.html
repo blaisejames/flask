@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Ninja Gold</title>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h4>Your Gold: </h4>
+            <div id="goldbox">
+                {{ session['gold'] }}
+            </div>
+        </header>
+        <section>
+            <div class="place">
+                <h3>Farm</h3>
+                <p>Earns 10-20 golds</p>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="farm" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="place">
+                <h3>Cave</h3>
+                <p>Earns 5-10 golds</p>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="cave" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="place">
+                <h3>House</h3>
+                <p>Earns 2-5 golds</p>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="house" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+            <div class="place">
+                <h3>Casino</h3>
+                <p>Earns 0-50 golds</p>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="casino" />
+                    <input type="submit" value="Find Gold!"/>
+                </form>
+            </div>
+        </section>
+        <main>
+            <h4>Activities:</h4>
+            <div id="activitybox">
+                {% for i in session['activity']|reverse %}
+                    {{ i|safe }}   
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+</body>
+</html>

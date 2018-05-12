@@ -1,0 +1,86 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0px none;
+    padding: 0px;
+    margin: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.wrapper {
+    width: 950px;
+    margin: auto;
+    background-color: beige;
+    border: 2px solid brown;
+    border-radius: 4px;
+}
+header, main {
+    margin: 20px;
+}
+h4 {
+    display: inline-block;
+}
+#goldbox {
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    border: 2px solid brown;
+    background-color: tan;
+    border-radius: 4px;
+    text-align: right;
+    font-weight: bold;
+}
+section {
+    margin: 20px;
+}
+.place {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+    padding: 20px;
+    background-color: tan;
+    border: none;
+    border-radius: 4px;
+}
+.place p {
+    text-align: center;
+    margin: 20px auto 40px auto;
+}
+input[type=submit] {
+    display: block;
+    margin: 10px auto;
+    width: 100px;
+    background-color: brown;
+    color: white;
+    font-size: 1em;
+    padding: 15px 0px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#activitybox {
+    display: block;
+    width: 870px;
+    height: 200px;
+    margin-top: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 4px;
+    overflow: scroll;
+}
+#activitybox p {
+    padding: 20px 20px 0px 20px;
+    font: 1em/1em;
+}
+h3 {
+    text-align: center;
+}
+.red {
+    color: red;   
+}
+.green {
+    color: green;   
+}
+
