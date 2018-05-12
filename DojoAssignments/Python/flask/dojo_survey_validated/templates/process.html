@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <title>Submitted Info</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main>
+        <div class="form">
+            <h3>Submitted Info:</h3>
+            <ul>
+                <li>Name:<span class='tab1'></span>{{ name }}</span></li>
+                <li>Dojo Location:<span class='tab2'>{{ location }}</span></li>
+                <li>Favorite Language:<span class='tab3'>{{ language }}</span></li>
+                <li>Comment:<span class='tab4'>{{ comment }}</span></li>
+            </ul>
+            <form action='/' method='GET'>
+                <input type='submit' value='Go Back'> 
+            </form>
+        </div>
+    </main>
+</body>
+</html>
