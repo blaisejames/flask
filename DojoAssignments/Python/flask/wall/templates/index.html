@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Login and Registration</title>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <div class='wrapper'>
+        <header>
+            <h2>The Wall</h2>
+        </header>
+        <main>
+            <div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class=flashes>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                            </ul>
+                    {% endif %}
+                {% endwith %}
+                <h3>Login</h3>
+                <form action='/login' method='POST'>
+                    <input type='text' name='email' placeholder='e-mail'>
+                    <input type='password' name='password' placeholder='password'>
+                    <input type='submit'>
+                </form> 
+            </div> 
+            <div>
+                <h3>New Registration</h3>
+                <form action='/register' method='POST'>
+                    <input type='text' name='first_name' placeholder='first name'>
+                    <input type='text' name='last_name' placeholder='last name'>
+                    <input type='text' name='email' placeholder='e-mail'>
+                    <input type='password' name='password' placeholder='password'>
+                    <input type='password' name='password_confirm' placeholder='retype password'>
+                    <input type='submit'>
+                </form> 
+            </div>   
+        </main>
+    </div>
+</body>
+</html>

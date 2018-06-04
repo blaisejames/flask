@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>The Wall</title>
+    <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <div class='wrapper'>
+        <header>
+            <h2>The Wall</h2>
+            <div class='right'>
+                <p>Welcome {{ user.first_name }}</p>
+                <p><a href="/logout">log off</a></p>
+            </div>
+        </header>
+        <section>
+            <div>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class=flashes>
+                            {% for message in messages %}
+                                <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+                <h3>Post a message</h3>
+                <form action='/post' method='POST'>
+                    <textarea name="post">
+                        Enter message here...
+                    </textarea>
+                    <input type='submit' value='Post a message'>  
+                </form>
+            </div>
+            <div class="postbox">
+                <ul>
+                {% for i in mess|reverse %}
+                    <li class='namedate'>{{ i.first_name }} - {{ i.created_at }}</li>
+                    <li class='body'>{{ i.message }}</li>
+                    <li></li>
+                </ul>
+                <div class="commentbox">
+                    <h3>Add a Comment</h3>
+                    <form action='/comments/{{ i.message_id }}' method='POST'>
+                        <textarea name="comment">Enter comment here...</textarea>
+                        <input type='submit' value='Post a comment'>  
+                    </form>
+                </div>
+            {% endfor %}
+            </div> 
+            <div class="commentbox">
+                <ul>
+                {% for i in comm %}
+                    <li class='namedate'>{{ i.first_name }} - {{ i.created_at }}</li>
+                    <li class='body'>{{ i.comm }}</li>
+                {% endfor %}
+                </ul>
+            </div> 
+        </section>
+    </div>   
+</body>
+</html>
